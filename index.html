@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>moj._.world</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <!-- Preloader -->
+    <div class="preloader">
+        <div class="loader"></div>
+    </div>
+    <div class="cursor"></div>
+<div class="cursor-follower"></div>
+
+    <!-- Header -->
+    <header>
+        <a href="#" class="logo"><i class="fas fa-couch"></i>Moj<span>E</span>World</a>
+        <div class="menu-toggle">
+            <i class="fas fa-bars"></i>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#testimonials">Testimonials</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+  <!-- 3D background canvas (ADD THIS) -->
+  <canvas id="bg"></canvas>
+
+  <!-- Keep your original hero text/buttons -->
+  <div class="hero-content">
+    <h1>Bringing <span>Art to Life</span> Through the Oil Paintings</h1>
+    <p>Explore unique paintings and sketches crafted with passion, where every stroke tells a story. My art transforms blank canvases into timeless masterpieces filled with life, color, and emotion. From delicate pencil sketches to vibrant watercolor paintings and bold abstract creations, each piece is designed to inspire, connect, and bring warmth to your space.</p>
+    <div class="cta-btns">
+      <a href="#portfolio" class="cta-btn">View Collection</a>
+      <a href="#contact" class="cta-btn secondary">Book Consultation</a>
+    </div>
+  </div>
+</section>
+
+
+<!-- Portfolio Section -->
+    <section class="section" id="portfolio">
+    <h2 class="section-title">My Portfolio</h2>
+    <div class="portfolio-filter">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="paintings">Paintings</button>
+        <button class="filter-btn" data-filter="sketches">Sketches</button>
+        <button class="filter-btn" data-filter="digital">Digital Art</button>
+        <button class="filter-btn" data-filter="portraits">Portraits</button>
+    </div>
+    <div class="portfolio-grid">
+        <div class="portfolio-item" data-category="paintings">
+            <img src="https://as1.ftcdn.net/v2/jpg/02/73/22/74/1000_F_273227473_N0WRQuX3uZCJJxlHKYZF44uaJAkh2xLG.jpg" alt="Oil Painting" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Oil Painting</h3>
+                <p>Rich textures and vibrant colors on canvas</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="sketches">
+            <img src="https://fullbloomclub.net/wp-content/uploads/2024/03/realisitc-drawing.jpg" alt="Pencil Sketch" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Pencil Sketch</h3>
+                <p>Hand-drawn details capturing raw emotion</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="digital">
+            <img src="https://wallpapercrafter.com/desktop1/500076-digital-digital-art-artwork-illustration-drawing.jpg" alt="Digital Illustration" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Digital Illustration</h3>
+                <p>Modern art created with digital tools</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="portraits">
+            <img src="https://c.files.bbci.co.uk/11AF8/production/_133304427_c3400905-3742-4db3-b546-f919a4cdf24e.jpg" alt="Custom Portrait" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Custom Portrait</h3>
+                <p>Personalized artwork made to order</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="paintings">
+            <img src="https://static.skillshare.com/uploads/video/thumbnails/0190cceb185ab931f9a0ae15c7566ca5/original" alt="Watercolor Art" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Watercolor Art</h3>
+                <p>Soft blends and delicate brushwork</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+        <div class="portfolio-item" data-category="sketches">
+            <img src="https://blog.udemy.com/wp-content/uploads/2014/05/bigstock-Drawing-picture-of-drawing-cha-59510285.jpg" alt="Charcoal Sketch" class="portfolio-img">
+            <div class="portfolio-overlay">
+                <h3>Charcoal Sketch</h3>
+                <p>Bold contrasts and expressive strokes</p>
+                <button class="view-btn">View Details</button>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- 3D Furniture Showcase -->
+    <section class="section" style="background: var(--darker2);">
+        <h2 class="section-title" style="color: var(--light);">3D Showcase</h2>
+        <div class="showcase-container">
+    <div class="furniture-showcase" id="showcase1">
+        <div class="furniture-side front"></div>
+        <div class="furniture-side back"></div>
+        <div class="furniture-side left"></div>
+        <div class="furniture-side right"></div>
+        <div class="furniture-side top"></div>
+        <div class="furniture-side bottom"></div>
+    </div>
+    <div class="furniture-showcase" id="showcase2">
+        <div class="furniture-side front"></div>
+        <div class="furniture-side back"></div>
+        <div class="furniture-side left"></div>
+        <div class="furniture-side right"></div>
+        <div class="furniture-side top"></div>
+        <div class="furniture-side bottom"></div>
+    </div>
+    <div class="furniture-showcase" id="showcase3">
+        <div class="furniture-side front"></div>
+        <div class="furniture-side back"></div>
+        <div class="furniture-side left"></div>
+        <div class="furniture-side right"></div>
+        <div class="furniture-side top"></div>
+        <div class="furniture-side bottom"></div>
+    </div>
+</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section" id="about">
+        <h2 class="section-title">About moj._.world</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3 style="color: var(--dark2);">Redefining Art & Creativity Since 2010</h3>
+                <p style="color: var(--dark2); font-weight: bold;">My journey as an artist began with a vision to create paintings and sketches that go beyond decoration — each piece tells a story, captures an emotion, and brings imagination to life.</p>
+                <p style="color: var(--dark2); font-weight: bold;">Every artwork is carefully crafted with passion, blending traditional techniques with modern creativity. From pencil sketches to vibrant paintings, I believe in art that inspires, connects, and lasts for generations.</p>
+                <div class="about-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: var(--dark2);" >15+</div>
+                        <div class="stat-text" style="color: var(--dark2); font-weight: bold;">Years Experience</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: var(--dark2);">500+</div>
+                        <div class="stat-text" style="color: var(--dark2); font-weight: bold;">Happy Clients</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" style="color: var(--dark2);">50+</div>
+                        <div class="stat-text" style="color: var(--dark2); font-weight: bold;">Design Awards</div>
+                    </div>
+                </div>
+            </div>
+            <div class="about-image">
+                <div class="furniture-3d"></div>
+            </div>
+        </div>
+    </section>
+
+    
+
+
+
+    <!-- Services Section -->
+    <section class="section services" id="services">
+    <h2 class="section-title" style="color: var(--light2);">My Services</h2>
+    <div class="services-container">
+  <div class="service-card" data-variant="1">
+    <div class="service-icon"><i class="fas fa-paint-brush"></i></div>
+    <h3>Custom Paintings</h3>
+    <p>Personalized artworks created just for you — portraits, landscapes, or abstract pieces to match your vision.</p>
+  </div>
+
+  <div class="service-card" data-variant="2">
+    <div class="service-icon"><i class="fas fa-pencil-alt"></i></div>
+    <h3>Sketch Commissions</h3>
+    <p>Detailed pencil and charcoal sketches, perfect for gifts, memories, or adding character to your space.</p>
+  </div>
+
+  <div class="service-card" data-variant="3">
+    <div class="service-icon"><i class="fas fa-image"></i></div>
+    <h3>Digital Illustrations</h3>
+    <p>Modern digital artworks and illustrations for social media, branding, or personal collections.</p>
+  </div>
+
+  <div class="service-card" data-variant="4">
+    <div class="service-icon"><i class="fas fa-users"></i></div>
+    <h3>Workshops & Classes</h3>
+    <p>Interactive sessions where I teach painting and sketching techniques to beginners and enthusiasts.</p>
+  </div>
+
+  <div class="service-card" data-variant="5">
+    <div class="service-icon"><i class="fas fa-gift"></i></div>
+    <h3>Gift Art</h3>
+    <p>Unique, handmade art pieces crafted as meaningful gifts for special occasions.</p>
+  </div>
+
+  <div class="service-card" data-variant="6">
+    <div class="service-icon"><i class="fas fa-book-open"></i></div>
+    <h3>Portfolio Projects</h3>
+    <p>Collaborations and commissioned projects for exhibitions, catalogues, and interior decoration.</p>
+  </div>
+</div>
+
+
+</section>
+
+
+    
+
+
+    <!-- Testimonials Section -->
+    <section class="section testimonials" id="testimonials">
+    <h2 class="section-title">Client Testimonials</h2>
+    <div class="testimonial-slider">
+        
+        <div class="testimonial-slide active">
+            <img src="https://t4.ftcdn.net/jpg/09/75/07/11/360_F_975071103_e99E3iSot86QtdT8vRJUyTOYao83XxRB.jpg" alt="Client" class="client-img">
+            <div class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="client-text">"The portrait she created for my parents was breathtaking. Every detail felt alive, and it’s now the most cherished piece in our home."</p>
+            <div class="client-info">
+                <h4>Sara</h4>
+                <p>Teacher, Lahore</p>
+            </div>
+        </div>
+
+        <div class="testimonial-slide">
+            <img src="https://t4.ftcdn.net/jpg/04/44/74/99/360_F_444749923_B0XJTJJRUVlRQHcDeSV1eOG6JjkKdj7Q.jpg" alt="Client" class="client-img">
+            <div class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+            </div>
+            <p class="client-text">"Her sketch of my late grandfather captured his essence so beautifully that it brought tears to our eyes. Truly priceless work."</p>
+            <div class="client-info">
+                <h4>Ahmed</h4>
+                <p>Entrepreneur, Karachi</p>
+            </div>
+        </div>
+
+        <div class="testimonial-slide">
+            <img src="https://www.shutterstock.com/image-photo/pakistani-female-corporate-girl-portrait-260nw-2612992577.jpg" alt="Client" class="client-img">
+            <div class="client-rating">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+            </div>
+            <p class="client-text">"The watercolor piece I commissioned for my office added so much warmth and personality. Visitors always compliment it!"</p>
+            <div class="client-info">
+                <h4>Maria</h4>
+                <p>Interior Designer, Islamabad</p>
+            </div>
+        </div>
+
+        <div class="slider-nav">
+            <div class="slider-dot active" data-slide="0"></div>
+            <div class="slider-dot" data-slide="1"></div>
+            <div class="slider-dot" data-slide="2"></div>
+        </div>
+    </div>
+</section>
+
+
+    <!-- Contact Section -->
+    <section class="section contact" id="contact">
+        <h2 class="section-title" >Contact Us</h2>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Get In Touch</h3>
+                <div class="contact-details">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Location</h4>
+                            <p>Near Post Office, Street 2, Kunjah.</p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Phone</h4>
+                            <p><a href="tel:+1234567890">+92 3100002904</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Email</h4>
+                            <p><a href="mailto:info@luxefurniture.com">www.email.com</a></p>
+                        </div>
+                    </div>
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-text">
+                            <h4>Hours</h4>
+                            <p>Monday - Friday: 9am - 6pm<br>Saturday: 10am - 4pm</p>
+                        </div>
+                    </div>
+                </div>
+                <h3>Follow Us</h3>
+                <div class="social-links">
+                    <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-pinterest-p"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+            <div class="contact-form">
+                <form>
+                    <div class="form-group">
+                        <input type="text" placeholder="Your Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" placeholder="Subject">
+                    </div>
+                    <div class="form-group">
+                        <textarea placeholder="Your Message" required></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send Message</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <a href="#" class="footer-logo">Moj<span>E</span>World</a>
+        <div class="footer-links">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#services">Services</a>
+            <a href="#portfolio">Portfolio</a>
+            <a href="#testimonials">Testimonials</a>
+            <a href="#contact">Contact</a>
+        </div>
+        <div class="footer-social">
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-pinterest-p"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+        </div>
+        <p class="copyright">&copy; 2023 moj.E.world. All Rights Reserved.</p>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
