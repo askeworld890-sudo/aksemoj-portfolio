@@ -137,20 +137,7 @@ pointLight.position.set(20, 20, 20);
 const ambientLight = new THREE.AmbientLight(0xffffff, 0.25);
 scene.add(pointLight, ambientLight);
 
-// Optional: few stars for depth
-function addStar() {
-  const geo = new THREE.SphereGeometry(0.2, 12, 12);
-  const mat = new THREE.MeshStandardMaterial({ color: 0xffffff });
-  const star = new THREE.Mesh(geo, mat);
-  const spread = 80;
-  star.position.set(
-    THREE.MathUtils.randFloatSpread(spread),
-    THREE.MathUtils.randFloatSpread(spread),
-    THREE.MathUtils.randFloatSpread(spread)
-  );
-  scene.add(star);
-}
-Array(60).fill().forEach(addStar);
+
 
 // Size renderer to HERO (not full window)
 function sizeToHero() {
